@@ -145,9 +145,3 @@ Bachelor of Engineering
 Chandigarh University
 
 ---
-
-If you want, I can also give you:
-
-* **A more advanced README that looks professional on GitHub (with badges, visuals, and diagrams)**
-* **EDA graphs you should upload in the repo**
-* **Python notebook code for the entire project** (which makes your GitHub project much stronger).
