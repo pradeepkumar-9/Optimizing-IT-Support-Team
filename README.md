@@ -96,10 +96,6 @@ Based on the analysis, strategies were proposed to:
 * Customer satisfaction analysis
 
 ---
-```
-
----
-
 ## Results
 
 The analysis helped identify:
