@@ -96,25 +96,6 @@ Based on the analysis, strategies were proposed to:
 * Customer satisfaction analysis
 
 ---
-
-## Project Structure
-
-```
-Optimizing-IT-Support-Team
-│
-├── data
-│   ├── messy_it_support_raw_data.xlsx
-│   ├── cleaned_it_support_dataset.xlsx
-│
-├── notebooks
-│   ├── data_cleaning.ipynb
-│   ├── eda_analysis.ipynb
-│
-├── visuals
-│   ├── issue_distribution.png
-│   ├── resolution_time_analysis.png
-│
-├── README.md
 ```
 
 ---
@@ -137,11 +118,5 @@ The analysis helped identify:
 * Develop a real-time dashboard for IT support monitoring.
 
 ---
-
-## Author
-
-Pradeep Solanki
-Bachelor of Engineering
-Chandigarh University
 
 ---
