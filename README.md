@@ -1,118 +1,172 @@
+# 📊 IT Support Ticket Operations Dashboard (Power BI)
 
-# Optimizing IT Support Team
+## 🔹 Project Overview
 
-## Project Overview
+This project presents an interactive **IT Support Dashboard** developed using Power BI to analyze and monitor ticket operations. The dashboard provides insights into ticket volume, resolution efficiency, SLA compliance, and support agent performance.
 
-This project focuses on analyzing IT support ticket data to improve the efficiency and performance of an IT support team. By examining support requests, response times, issue types, and customer satisfaction, the project aims to identify patterns and suggest strategies to optimize resource allocation and reduce resolution time.
-
-The dataset contains support ticket records including ticket ID, issue type, priority, department, assigned team, resolution time, and customer satisfaction scores.
-
----
-
-## Objectives
-
-* Analyze IT support ticket data to understand common issues.
-* Identify factors affecting ticket resolution time.
-* Evaluate team workload distribution.
-* Improve customer satisfaction by optimizing support processes.
-* Provide data-driven insights for better IT support management.
+The goal of this project is to transform raw ticket data into meaningful insights that help improve decision-making and operational efficiency in IT support services.
 
 ---
 
-## Dataset
+## 🎯 Objectives
 
-The dataset used in this project contains the following fields:
-
-| Column Name           | Description                                 |
-| --------------------- | ------------------------------------------- |
-| Ticket_ID             | Unique identifier for each support ticket   |
-| Date                  | Date when the ticket was raised             |
-| Time                  | Time when the ticket was reported           |
-| Issue_Type            | Type of IT issue reported                   |
-| Priority              | Priority level (Low, Medium, High)          |
-| Department            | Department requesting support               |
-| Assigned_Team         | IT team responsible for resolving the issue |
-| Resolution_Time_Hours | Time taken to resolve the issue             |
-| Status                | Ticket status                               |
-| Customer_Satisfaction | User rating after issue resolution          |
+* Monitor total ticket workload and status distribution
+* Analyze ticket trends over time
+* Evaluate SLA compliance and breaches
+* Measure resolution and response efficiency
+* Track support agent performance
+* Identify bottlenecks in IT support operations
 
 ---
 
-## Project Workflow
+## 📁 Dataset Description
 
-### 1. Data Collection
+The dataset consists of IT support ticket records with the following fields:
 
-Raw IT support ticket data was collected and stored in Excel format.
-
-### 2. Data Cleaning
-
-The raw dataset contained:
-
-* Missing values
-* Inconsistent text formatting
-* Duplicate ticket IDs
-* Mixed date formats
-
-These issues were corrected using data cleaning techniques.
-
-### 3. Exploratory Data Analysis (EDA)
-
-EDA was performed to identify:
-
-* Most frequent IT issues
-* Average resolution time
-* Priority distribution
-* Team workload
-* Customer satisfaction trends
-
-### 4. Insights and Optimization
-
-Based on the analysis, strategies were proposed to:
-
-* Improve ticket response time
-* Balance workload across support teams
-* Reduce recurring issues
-* Improve user satisfaction
+* Ticket ID
+* Date
+* Status (Open, Closed, In Progress)
+* Priority (High, Medium, Low)
+* Category (Network, Software, Hardware, etc.)
+* Support Agent
+* Resolution Time (hours)
+* First Response Time (hours)
+* SLA Limit (hours)
 
 ---
 
-## Technologies Used
+## 🧹 Data Cleaning (Power Query)
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Microsoft Excel
+The dataset was cleaned and transformed using Power Query:
 
----
-
-## Key Analysis Performed
-
-* Ticket distribution by issue type
-* Average resolution time by team
-* Priority vs resolution time analysis
-* Department-wise issue frequency
-* Customer satisfaction analysis
-
----
-## Results
-
-The analysis helped identify:
-
-* Frequently occurring IT issues
-* Departments generating the most support tickets
-* Average resolution time for different teams
-* Key areas where support efficiency can be improved
+* Removed duplicates and unnecessary columns
+* Handled missing/null values
+* Standardized date formats
+* Converted data types (text, date, numeric)
+* Trimmed and cleaned text fields
 
 ---
 
-## Future Improvements
+## 📊 Key KPIs
 
-* Implement machine learning models to predict ticket resolution time.
-* Build an automated ticket classification system.
-* Develop a real-time dashboard for IT support monitoring.
+The dashboard includes the following Key Performance Indicators:
+
+* Total Tickets
+* Open Tickets
+* Closed Tickets
+* Pending Tickets
+* Average Resolution Time
+* SLA Compliance (%)
+* SLA Breach Count
 
 ---
 
+## 📈 Dashboard Features
+
+### 1. Ticket Status Distribution
+
+* Donut chart showing Open, Closed, and In Progress tickets
+
+### 2. Ticket Trends Over Time
+
+* Line chart to analyze ticket volume across dates
+
+### 3. Tickets by Priority
+
+* Bar chart displaying High, Medium, and Low priority tickets
+
+### 4. Tickets by Category
+
+* Stacked chart showing issue types and their status
+
+### 5. Resolution Time Analysis
+
+* Average resolution time by category
+
+### 6. SLA Performance
+
+* Gauge visual showing SLA compliance percentage
+
+### 7. Agent Performance
+
+* Charts and table showing:
+
+  * Tickets handled
+  * Resolution time
+  * First response time
+
+### 8. Interactive Filters (Slicers)
+
+* Date
+* Priority
+* Category
+* Support Agent
+
 ---
+
+## 🧮 Key Calculations (DAX)
+
+```DAX
+Total Tickets = COUNT(Tickets[Ticket ID])
+
+Open Tickets = CALCULATE(COUNT(Tickets[Ticket ID]), Tickets[Status] = "Open")
+
+Closed Tickets = CALCULATE(COUNT(Tickets[Ticket ID]), Tickets[Status] = "Closed")
+
+SLA Compliance % =
+DIVIDE(
+    CALCULATE(COUNT(Tickets[Ticket ID]), Tickets[SLA Met] = "Yes"),
+    COUNT(Tickets[Ticket ID])
+) * 100
+```
+
+---
+
+## 📌 Key Insights
+
+* Majority of tickets are successfully closed within SLA
+* High priority tickets require faster resolution
+* Certain categories (e.g., hardware/security) have higher resolution times
+* Agent performance varies based on workload and efficiency
+
+---
+
+## 🚀 Tools & Technologies Used
+
+* Power BI (Dashboard & Visualization)
+* Power Query (Data Cleaning)
+* DAX (Calculations & Measures)
+* Microsoft Excel (Dataset)
+
+---
+
+## 📊 Business Impact
+
+This dashboard helps:
+
+* Improve IT service efficiency
+* Monitor SLA performance
+* Optimize resource allocation
+* Enhance customer satisfaction
+
+---
+
+## 🔮 Future Improvements
+
+* Add predictive analytics for ticket trends
+* Include ticket aging analysis
+* Integrate real-time data sources
+* Add customer satisfaction metrics
+
+---
+
+## 👨‍💻 Author
+
+Pradeep Kumar
+B.E. CSE Student, Chandigarh University
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates how data visualization and analytics can be used to improve IT support operations by providing actionable insights and performance monitoring.
